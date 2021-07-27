@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codebits eBooks Library</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <section class="container text-center mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class=" text-center">Codebits <span class="text-danger">eBooks</span> Library</h1>
+            </div>
+        </div>
+        
+       <div class="row mt-3">
+        <div class="col-md-12">
+        <p id="display"></p>
+        <input type="text" id="txt1" class="form-control" placeholder="Title"> <br>
+        <input type="text" id="txt2" class="form-control" placeholder="Author"> <br>
+        <input type="text" id="txt3" class="form-control" placeholder="ISBN"> <br>
+
+        <button id="btn" class="btn btn-primary">Add Book</button>
+        </div>
+    </div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <table border="1" id="table"></table>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let txt1 = document.getElementById("txt1");
+        let txt2 = document.getElementById("txt2");
+        let txt3 = document.getElementById("txt3");
+        let btn = document.getElementById("btn");
+        let display = document.querySelector("#display");
+        let table = document.getElementById("table");
+
+        btn.addEventListener("click", Book);
+
+
+        function Book() {
+            if (txt1 != null && txt2 != null && txt3 != null) {
+                function Book(Title, Author, ISBN) {
+            this.Book = book;
+            this.Author = author;
+            this.ISBN = ISBN;
+
+            table.innerHTML = '';
+            let tr = document.createElement("tr");
+            tr.innerHTML = "<th>Title</th><th>Author</th><th>ISBN</th>";
+            table.appendChild(tr);
+        
+            const books = [
+                new addBook(txt1.value, txt2.value, txt3.value)
+            ];
+
+            Book.forEach(book => {
+                let tr = document.createElement("tr");
+                tr.innerHTML = `<td>${book.Title}</td><td>${book.Author}</td><td>${book.ISBN}</td>`;
+
+                table.appendChild(tr);
+            });
+        }
+                 
+            }
+            else{
+                
+                display.innerText = 'Empty fields not allowed!';
+                display.style.backgroundColor = 'pink';
+                display.style.color = "red";
+                display.style.padding = '10px'
+                display.style.textAlign = 'left'
+                display.style.fontSize = '20px'
+            
+            setTimeout(() => {
+                display.innerText = null;
+                display.style.backgroundColor = '';
+                display.style.color = '';
+            }, 3000);
+        }
+
+    }
+    
+   
+      
+   
+   </script>
+</body>
+</html>
