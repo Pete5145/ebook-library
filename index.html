@@ -46,7 +46,7 @@
 
 
         function Book() {
-            if (txt1 != null && txt2 != null && txt3 != null) {
+            if (txt1 == null && txt2 == null && txt3 == null) {
                 function Book(Title, Author, ISBN) {
             this.Book = book;
             this.Author = author;
@@ -83,7 +83,7 @@
                 display.innerText = null;
                 display.style.backgroundColor = '';
                 display.style.color = '';
-            }, 3000);
+            }, 4000);
         }
 
     }
